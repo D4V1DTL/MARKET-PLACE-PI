@@ -1,0 +1,87 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	template="../template/plantilla_general.xhtml">
+	<ui:define name="content">
+	
+	<div class="checkout" style="margin-top: 150px">
+				<div class="container">
+					<div class="row">
+		
+						<!-- Billing Details -->
+						<div class="col-lg-6">
+							<div class="billing">
+								<div class="checkout_title">My Profile</div>
+								<div class="checkout_form_container">
+									<h:form  id="checkout_form">
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-between">
+											<h:inputText id="first_name" value="#{seguridadJSF.user_firstname}" class="checkout_input checkout_input_50" a:placeholder="First Name" required="required"/>
+											<h:inputText id="user_lastname" value="#{seguridadJSF.user_lastname}"  class="checkout_input checkout_input_50" a:placeholder="Last Name" required="required"/>
+										</div>
+										<h:inputText id="user_name" value="#{seguridadJSF.user_name}"  class="checkout_input" a:placeholder="User Name"/>
+										<h:inputText id="user_email" value="#{seguridadJSF.user_email}"  class="checkout_input" a:placeholder="E-mail" required="required"/>
+										<h:inputText id="user_addres" value="#{seguridadJSF.user_addres}"  class="checkout_input" a:placeholder="Address" required="required"/>
+										<h:inputText id="user_password" value="#{seguridadJSF.user_password}"  class="checkout_input" a:placeholder="Password" required="required"/>
+										<div class="d-flex flex-lg-row flex-column align-items-start justify-content-between">
+											<h:inputText id="user_mobil" value="#{seguridadJSF.user_movil2}"  class="checkout_input checkout_input_50" a:placeholder="Mobil" required="required" maxlength="6"/>
+											<h:inputText id="user_movil2" value="#{seguridadJSF.user_mobil}" class="checkout_input checkout_input_50" a:placeholder="Cell Phone" required="required" maxlength="9"/>
+										</div>
+										
+										<h:commandButton class="cart_total_button" value="Guardar"  action="#{seguridadJSF.eventoupdateuser}" />
+									</h:form>
+								</div>
+							</div>
+						</div>
+		
+						<!-- Cart Details -->
+						<div class="col-lg-6">
+							<div class="cart_details">
+								<div class="checkout_title">My Photo</div>
+								<div class="cart_total">
+								<h:form enctype="multipart/form-data">
+									<h:panelGrid  columns="1" >
+										<p:graphicImage value="/#{seguridadJSF.imagen}"  height="200" width="200" />
+									  	<p:fileUpload value="#{seguridadJSF.foto}" mode="simple" />
+									</h:panelGrid>
+									<h:commandButton class="cart_total_button" value="Guardar foto"  action="#{seguridadJSF.eventoupdateuser}" />
+								</h:form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Newsletter -->
+		<div class="newsletter" style="margin-top: 200px" >
+			<div class="newsletter_content">
+				<div class="newsletter_image" style="background-image:url(../webbot/images/newsletter.jpg)"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="section_title_container text-center">
+								<div class="section_subtitle">only the best</div>
+								<div class="section_title">subscribe for a 20% discount</div>
+							</div>
+						</div>
+					</div>
+					<div class="row newsletter_container">
+						<div class="col-lg-10 offset-lg-1">
+							<div class="newsletter_form_container">
+								<h:form action="#">
+									<input type="email" class="newsletter_input" required="required" placeholder="E-mail here"/>
+									<button type="submit" class="newsletter_button">subscribe</button>
+								</h:form>
+							</div>
+							<div class="newsletter_text">Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestib ulum ultrices nulla. Aliquam egestas tempor leo.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    
+		
+	</ui:define>
+</ui:composition>

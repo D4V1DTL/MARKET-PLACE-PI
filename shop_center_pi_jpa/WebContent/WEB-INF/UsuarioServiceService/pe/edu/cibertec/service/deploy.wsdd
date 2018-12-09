@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UsuarioServiceService WSDL service -->
+
+  <service name="UsuarioService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.cibertec.edu.pe"/>
+      <parameter name="wsdlServiceElement" value="UsuarioServiceService"/>
+      <parameter name="schemaQualified" value="http://service.cibertec.edu.pe,http://entity.cibertec.edu.pe"/>
+      <parameter name="wsdlServicePort" value="UsuarioService"/>
+      <parameter name="className" value="pe.edu.cibertec.service.UsuarioService"/>
+      <parameter name="wsdlPortType" value="UsuarioService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.cibertec.edu.pe" xmlns:retNS="http://service.cibertec.edu.pe" xmlns:rtns="http://entity.cibertec.edu.pe" name="insertar" qname="operNS:insertar" returnQName="retNS:insertarReturn" returnType="rtns:Statusmsg" soapAction="">
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_firstname" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_lastname" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_name" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_email" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_password" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_mobil" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_movil2" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_addres" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.cibertec.edu.pe" xmlns:retNS="http://service.cibertec.edu.pe" xmlns:rtns="http://entity.cibertec.edu.pe" name="validarUsuario" qname="operNS:validarUsuario" returnQName="retNS:validarUsuarioReturn" returnType="rtns:Statusmsg" soapAction="">
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://entity.cibertec.edu.pe" qname="pns:obj" type="tns:Usuario"/>
+      </operation>
+      <operation xmlns:operNS="http://service.cibertec.edu.pe" xmlns:retNS="http://service.cibertec.edu.pe" xmlns:rtns="http://entity.cibertec.edu.pe" name="actualizar" qname="operNS:actualizar" returnQName="retNS:actualizarReturn" returnType="rtns:Statusmsg" soapAction="">
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_firstname" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_lastname" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_name" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_email" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_password" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_mobil" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_movil2" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user_addres" type="tns:string"/>
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idcate" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.cibertec.edu.pe" xmlns:retNS="http://service.cibertec.edu.pe" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="eliminar" qname="operNS:eliminar" returnQName="retNS:eliminarReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.cibertec.edu.pe" xmlns:retNS="http://service.cibertec.edu.pe" xmlns:rtns="http://entity.cibertec.edu.pe" name="buscar" qname="operNS:buscar" returnQName="retNS:buscarReturn" returnType="rtns:Usuario" soapAction="">
+        <parameter xmlns:pns="http://service.cibertec.edu.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="validarUsuario insertar eliminar actualizar buscar"/>
+
+      <typeMapping xmlns:ns="http://entity.cibertec.edu.pe" qname="ns:Usuario" type="java:pe.edu.cibertec.entity.Usuario" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://entity.cibertec.edu.pe" qname="ns:Statusmsg" type="java:pe.edu.cibertec.entity.Statusmsg" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://entity.cibertec.edu.pe" qname="ns:Categoria" type="java:pe.edu.cibertec.entity.Categoria" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

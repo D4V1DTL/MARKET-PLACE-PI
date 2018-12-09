@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="companyView.xhtml">
+	<ui:define name="content2">
+
+    <h:form   class="review_form" enctype="multipart/form-data">
+		<h:panelGrid  columns="2" styleClass="alineacionColumna" >
+	
+			<h:outputText value="Nombre" />
+			<h:inputText value="#{seguridadJSF.producto.nombre}" />
+
+			<h:outputText value="Precio" />
+			<h:inputText value="#{seguridadJSF.producto.precio}" />
+
+			<h:outputText value="Descripcion" />
+			<h:inputText value="#{seguridadJSF.producto.descripcion}" />
+
+			<h:outputText value="FOTO" /> 
+		  	<p:fileUpload value="#{seguridadJSF.fotopro}" mode="simple" />
+						
+          
+			<p:commandButton value="Enviar" ajax="false" action="#{seguridadJSF.registrarProduct}" />
+			
+		
+		</h:panelGrid>
+	</h:form>
+		
+	</ui:define>
+</ui:composition>

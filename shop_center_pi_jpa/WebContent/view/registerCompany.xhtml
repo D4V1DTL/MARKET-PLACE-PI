@@ -1,0 +1,70 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	template="../template/plantilla_general.xhtml">
+	<ui:define name="content">
+	
+	<!-- Contact Form -->
+	
+		<div class="newsletter" style="margin-top: 200px" >
+			<div class="newsletter_content">
+			
+				<div class="newsletter_image"  style="background-image:url(../webbot/images/companyf.jpeg); height: 500px;"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="section_title_container text-center">
+								
+							</div>
+						</div>
+					</div>
+					<div class="row newsletter_container">
+						<div class="col-lg-10 offset-lg-1">
+							
+								<h:form action="#">
+									<h:commandButton value="Create Store" style="height: 80px;" action="#{seguridadJSF.eventoupdatcompa2}" type="submit" class="review_form_button"/>
+								</h:form>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		<br/><br/><br/>
+		<br/><br/><br/>
+		<!-- Newsletter -->
+		<div class="newsletter" style="margin-top: 200px" >
+			<div class="newsletter_content">
+				<div class="newsletter_image" style="background-image:url(../webbot/images/newsletter.jpg)"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="section_title_container text-center">
+								<div class="section_subtitle">only the best</div>
+								<div class="section_title">subscribe for a 20% discount</div>
+							</div>
+						</div>
+					</div>
+					<div class="row newsletter_container">
+						<div class="col-lg-10 offset-lg-1">
+							<div class="newsletter_form_container">
+								<h:form action="#">
+									<input type="email" class="newsletter_input" required="required" placeholder="E-mail here"/>
+									<button type="submit" class="newsletter_button">subscribe</button>
+								</h:form>
+							</div>
+							<div class="newsletter_text">Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestib ulum ultrices nulla. Aliquam egestas tempor leo.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    
+		
+	</ui:define>
+</ui:composition>

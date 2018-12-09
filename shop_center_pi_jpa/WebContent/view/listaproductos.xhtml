@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="companyView.xhtml">
+	<ui:define name="datatablee">
+
+    	<h:form >
+			<p:dataTable rows="8" var="aux"
+							 value="#{seguridadJSF.listaProducto}"
+							 binding="#{seguridadJSF.dttProducto}" >
+							 
+					<f:facet name="header">Lista Products</f:facet>
+					
+					<p:column headerText="id" style="width:32px;">
+						<h:outputText value="#{aux.id}" />
+					</p:column>
+					<p:column headerText="Nombre" style="width:32px;">
+						<h:outputText value="#{aux.nombre}"/>
+					</p:column>
+					<p:column headerText="Descripcion" style="width:32px;">
+						<h:outputText value="#{aux.descripcion}"/>
+					</p:column>
+					<p:column headerText="Stock" style="width:32px;">
+						<h:outputText value="#{aux.stock}"/>
+					</p:column>	
+					<p:column headerText="Precio" style="width:32px;" >
+						<h:outputText value="#{aux.precio}"/>
+					</p:column>				
+					<p:column headerText="-" style="width:32px;text-align: center" >
+						<h:commandButton style="width:32px;text-align: center" id="id1"
+								 	     actionListener="#{seguridadJSF.eliminaproucto}"
+								 		 image="../webbot/icons/eliminar.ico"/>
+					</p:column>
+		
+				  	<p:column style="width:32px;text-align: center">
+					  	<p:graphicImage value="/#{aux.imagen}" height="96" width="96" />
+				  	</p:column> 
+				  	     			 
+       			 
+				</p:dataTable>		
+				
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
